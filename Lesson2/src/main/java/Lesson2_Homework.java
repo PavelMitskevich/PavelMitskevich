@@ -2,14 +2,17 @@ public class Lesson2_Homework {
     public static int sum(int a, int b) {
         int summa = a + b;
         long summa1 = (long) a + (long) b;
-        if (summa1 > (long) 2147483647) {
+        if (summa1 > Integer.MAX_VALUE) {
             return -1;
         }
         return summa;
     }
 
     public static int max(int a, int b) {
-        return Math.max(a,b);
+        if (a<b){
+            return b;
+        }
+        return a;
     }
 
     public static double average(int[] array) {
