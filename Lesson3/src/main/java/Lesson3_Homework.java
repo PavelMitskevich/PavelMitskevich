@@ -54,7 +54,7 @@ public class Lesson3_Homework {
     public static void countDevs(int count) {
         if (count % 10 == 1 && count % 100 != 11) {
             System.out.println(count + " программист");
-        } else if (count % 10 > 1 && count % 10 < 5 && count % 100 < 5 && count % 100 > 21) {
+        } else if (count % 10 > 1 && count % 10 < 5 || count % 100 < 5 && count % 100 > 21) {
             System.out.println(count + " программиста");
         } else {
             System.out.println(count + " программистов");
