@@ -10,11 +10,11 @@ public class NullElement {
         int[] array = new int[20];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(20);
+            array[i] = random.nextInt(20)-10;
         }
         System.out.println(Arrays.toString(array));
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 1) {
+            if (array[i] % 2 != 0) {
                 array[i] = 0;
             }
         }
