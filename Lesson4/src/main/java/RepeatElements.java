@@ -7,7 +7,7 @@ public class RepeatElements {
     }
 
     public static void massive() {
-        int[] array = new int[8];
+        int[] array = new int[3];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(10);
@@ -21,10 +21,11 @@ public class RepeatElements {
                     if (count > 0) {
                         System.out.println("Массив имеет повторяющиеся элементы " + array[j]);
                         break;
-                    } else {
-                        System.out.print("Массив не имеет повторяющихся элементов");
-                        return;
                     }
+                }
+                if (count == 0) {
+                    System.out.print("Массив не имеет повторяющихся элементов");
+                    return;
                 }
             }
         }
