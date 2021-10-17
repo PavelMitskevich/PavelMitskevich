@@ -17,11 +17,10 @@ public class Sort {
         System.out.println();
 
         for (int i = 0; i < array.length / 2; ) {
-            for (int j = array.length - 1; j > array.length / 2 - 1; j--) {
+            for (int j = array.length - 1; j > array.length / 2 - 1; j--, i++) {
                 temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
-                i++;
             }
         }
         System.out.println(Arrays.toString(array));
