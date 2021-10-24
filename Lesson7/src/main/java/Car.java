@@ -48,7 +48,6 @@ public class Car {
             this.year = year;
         } else {
             System.out.println("Incorrect year");
-            this.year = 1991;
         }
     }
 
