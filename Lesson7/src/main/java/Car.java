@@ -35,7 +35,6 @@ public class Car {
             this.model = model;
         } else {
             System.out.println("Incorrect model");
-            this.model = "Audi";
         }
     }
 

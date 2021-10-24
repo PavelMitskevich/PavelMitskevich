@@ -14,7 +14,7 @@ public class Main {
         car1.gasStation(220);
         car1.start();
         car1.setModel("BMW");
-        car1.setYear(-2005);
+        car1.setYear(2005);
         car1.showInfo();
     }
 }
