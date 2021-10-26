@@ -1,20 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car();
+        Car car = new Car(new Engine("V8"), new GasTank(40), "BMW", 2000);
         car.start();
         car.showDistance();
         car.showFuel();
-        car.start();
         car.gasStation(60);
         car.start();
+        car.carIsDriving();
+        car.start();
+        car.showFuel();
+        car.gasStation(8);
+        car.carIsDriving();
+        car.carIsDriving();
+        car.stop();
         car.showInfo();
         System.out.println("----------------");
-        Car car1 = new Car();
-        car1 = new Car(car1.new Engine("V8"), car1.new GasTank(50));
-        car1.gasStation(220);
-        car1.start();
-        car1.setModel("BMW");
-        car1.setYear(2005);
-        car1.showInfo();
     }
 }
