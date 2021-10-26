@@ -1,30 +1,27 @@
 public class Car {
-    Engine engine = new Engine("V6");
-    GasTank gasTank = new GasTank(40);
-    private String model = "Audi";
-    private int year = 2001;
+    private Engine engine;
+    private GasTank gasTank;
+    private String model;
+    private int year;
 
     private double fuel;
     private double distance = 0;
-    private boolean flagStart;
+    private boolean flagStart = true;
     private boolean flagFuel;
 
-    Car() {
-        setModel(model);
-        setYear(year);
-    }
-
-    public Car(Engine engine, GasTank gasTank) {
+    public Car(Engine engine, GasTank gasTank, String model, int year) {
         this.engine = engine;
         this.gasTank = gasTank;
+        this.model = model;
+        this.year = year;
         setModel(model);
         setYear(year);
+
     }
 
     public void showInfo() {
-        System.out.printf("Car: %s, year: %d, engine: %s, gas tank: %d %n", getModel(), getYear(), engine.engine, gasTank.capacity);
+        System.out.printf("Car: %s, year: %d, engine: %s, gas tank: %f %n", getModel(), getYear(), engine.getEngine(), gasTank.getCapacity());
     }
-
 
     private String getModel() {
         return model;
@@ -50,23 +47,6 @@ public class Car {
         }
     }
 
-    public class Engine {
-        public String engine;
-
-        Engine(String engine) {
-            this.engine = engine;
-        }
-    }
-
-    public class GasTank {
-        public int capacity;
-
-        GasTank(int capacity) {
-            this.capacity = capacity;
-        }
-
-    }
-
     public void showDistance() {
         System.out.println("Distance = " + distance);
     }
@@ -75,17 +55,16 @@ public class Car {
         System.out.println("Fuel in gas tank = " + fuel);
     }
 
-    public int gasStation(int fuel) {
-        this.fuel = fuel;
-        distance = 60;
-        if (fuel > gasTank.capacity) {
-            this.fuel = gasTank.capacity;
+    public void gasStation(int fuelFromGasStation) {
+        if (fuel + fuelFromGasStation > gasTank.getCapacity()) {
+            this.fuel = gasTank.getCapacity();
+        }else {
+            fuel+=fuelFromGasStation;
         }
         if (fuel > 0) {
             flagFuel = false;
         }
         System.out.println("Refuel the car = " + this.fuel);
-        return (int) this.fuel;
     }
 
     public void start() {
@@ -93,36 +72,35 @@ public class Car {
             flagFuel = true;
         }
         if (!flagFuel) {
-            System.out.println("Engine started");
-            flagStart = false;
-            carIsDriving();
+            if (flagStart) {
+                System.out.println("Engine started");
+                flagStart = false;
+            } else {
+                System.out.println("You can't twice started engine, please please turn off the engine");
+            }
         } else {
             System.out.println("Fuel tank is empty, car can't started");
         }
     }
 
-    public void stop() {
-        if (fuel < 6) {
-            distance += fuel * 10 - 60;
-            fuel = 0;
-            flagFuel = true;
-            System.out.println("Engine stopped" + " Fuel: " + fuel + " Distance: " + distance);
-        } else {
-            fuel -= 6;
-            System.out.println("Engine stopped" + " Fuel: " + fuel + " Distance: " + distance);
-            distance += 60;
-        }
-        flagStart = true;
-        start();
-    }
-
     public void carIsDriving() {
-        if (flagStart) {
-            System.out.println("Engine isn't started, car can't driving");
-        } else {
+        if (!flagStart) {
             System.out.println("Car is driving");
+            if (fuel < 6) {
+                distance += fuel * 10 - 60;
+                fuel = 0;
+                flagFuel = true;
+            } else {
+                fuel -= 6;
+                distance += 60;
+            }
+        } else {
+            System.out.println("Engine isn't started, car can't driving");
         }
-        stop();
     }
 
+    public void stop() {
+        System.out.println("Engine stopped" + " Fuel: " + fuel + " Distance: " + distance);
+        flagStart = true;
+    }
 }
