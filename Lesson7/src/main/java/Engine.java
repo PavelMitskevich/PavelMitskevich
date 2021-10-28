@@ -2,7 +2,6 @@ public class Engine {
     private String engine;
 
     Engine(String engine) {
-        this.engine = engine;
         setEngine(engine);
     }
 

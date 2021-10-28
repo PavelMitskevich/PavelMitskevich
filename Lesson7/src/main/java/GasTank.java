@@ -2,7 +2,6 @@ public class GasTank {
     private double capacity;
 
     GasTank(int capacity) {
-        this.capacity = capacity;
         setCapacity(capacity);
     }
 
