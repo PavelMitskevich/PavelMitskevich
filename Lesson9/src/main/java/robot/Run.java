@@ -39,6 +39,13 @@ public class Run {
         robot2.action();
         System.out.println("---------");
 
-        Robot.checkPrice(new Robot[]{robot, robot1, robot2});
+        Robot[] robots = new Robot[]{robot, robot1, robot2};
+        int max = 0;
+        for (Robot r : robots) {
+            if (max < r.getPrice()) {
+                max = r.getPrice();
+            }
+        }
+        System.out.println("Max price = " + max);
     }
 }
