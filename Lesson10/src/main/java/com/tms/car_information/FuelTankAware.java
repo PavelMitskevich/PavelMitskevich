@@ -3,19 +3,17 @@ package com.tms.car_information;
 public interface FuelTankAware {
     double getCapacity();
 
-    default String showInfo() {
-        return "fuel tank capacity = " + getCapacity();
-    }
+    double getDistance();
 
-    void showDistance();
-
-    void showFuel();
+    double getFuelLevel();
 
     void gasStation(int fuelFromGasStation);
 
-    void start();
+    boolean start();
 
-    void carIsDriving();
+    void setDistance(double distance);
 
-    void stop();
+    void reductionFuel();
+
+    void increaseDistance();
 }
