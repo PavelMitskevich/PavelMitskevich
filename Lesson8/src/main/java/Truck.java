@@ -11,13 +11,13 @@ public class Truck extends Terrestrial {
         setLiftingCapacity(liftingCapacity);
     }
 
+    @Override
     public String showInfo() {
-        return "Model = " + getModel() + ", lifting capacity = " + getLiftingCapacity() + ", power = " + getPower() + ", power in kW = " + getPower() * 0.74 + ", max speed = " + getMaxSpeed()
-                + ", mass = " + getMass() + ", fuel consumption = " + getFuelConsumption() + ", count of wheels = " + getCountWheels();
+        return super.showInfo() + ", lifting capacity = " + getLiftingCapacity();
     }
 
     public void loadingPossibility(double cargo) {
-        if (cargo <= getLiftingCapacity()) {
+        if (getLiftingCapacity() >= cargo) {
             System.out.println("Truck is loaded");
         } else {
             System.out.println("You need bigger truck");

@@ -7,11 +7,14 @@ public class Air extends Transport {
     private double wingspan;
     private double minRunwayLength;
 
-    public Air(double power, double maxSpeed, double mass, String model, double wingspan, double minRunwayLength) {
-        super(power, maxSpeed, mass, model);
-        setWingspan(wingspan);
-        setMinRunwayLength(minRunwayLength);
+    public Air(String model, double power, double maxSpeed, double mass, double wingspan, double minRunwayLength) {
+        super(model, power, maxSpeed, mass);
+        this.wingspan = wingspan;
+        this.minRunwayLength = minRunwayLength;
     }
 
-
+    @Override
+    public String showInfo() {
+        return super.showInfo() + ", wingspan = " + getWingspan() + ", min runway length = " + getMinRunwayLength();
+    }
 }

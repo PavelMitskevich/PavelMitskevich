@@ -7,21 +7,21 @@ public class Civil extends Air {
     private int countPassages;
     private boolean availabilityBusinessClass;
 
-    public Civil(double power, double maxSpeed, double mass, String model, double wingspan, double minRunwayLength, int countPassages, boolean availabilityBusinessClass) {
-        super(power, maxSpeed, mass, model, wingspan, minRunwayLength);
-        setCountPassages(countPassages);
-        setAvailabilityBusinessClass(availabilityBusinessClass);
+    public Civil(String model, double power, double maxSpeed, double mass, double wingspan, double minRunwayLength, int countPassages, boolean availabilityBusinessClass) {
+        super(model, power, maxSpeed, mass, wingspan, minRunwayLength);
+        this.countPassages = countPassages;
+        this.availabilityBusinessClass = availabilityBusinessClass;
     }
 
+    @Override
     public String showInfo() {
-        return "Model = " + getModel() + ", wingspan = " + getWingspan() + ", min runway length = " + getMinRunwayLength() + ", power = " + getPower() + ", power in kW = " + getPower() * 0.74
-                + ", max speed = " + getMaxSpeed() + ", mass = " + getMass() + ", count of passages = " + getCountPassages() + ", business class = " + availabilityBusinessClass;
+        return super.showInfo() + ", count of passages = " + getCountPassages() + ", business class = " + availabilityBusinessClass;
     }
 
-    public void loadingPossibility(int quantityPassages){
-        if (quantityPassages<=getCountPassages()){
+    public void loadingPossibility(int quantityPassages) {
+        if (getCountPassages() >= quantityPassages) {
             System.out.println("Civil plane is loaded");
-        }else {
+        } else {
             System.out.println("You need bigger civil plane");
         }
     }

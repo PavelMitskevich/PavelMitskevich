@@ -1,18 +1,18 @@
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public abstract class Transport {
+    private String model;
     private double power;
     private double maxSpeed;
     private double mass;
-    private String model;
 
-    public Transport(double power, double maxSpeed, double mass, String model) {
-        setPower(power);
-        setMaxSpeed(maxSpeed);
-        setMass(mass);
-        setModel(model);
+    public String showInfo() {
+        return "Model = " + getModel() + ", power = " + getPower() + ", power in kW = " + getPower() * 0.74 + ", max speed = " + getMaxSpeed()
+                + ", mass = " + getMass();
     }
 }
