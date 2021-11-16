@@ -3,19 +3,23 @@ import java.util.Scanner;
 
 public class Lesson3_Homework {
     public static void main(String[] args) {
-        printArray();
-        System.out.println();
-        System.out.println(operation(1));
-        System.out.println(operation(0));
-        System.out.println(operation(-5));
-        System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6, 9, 11, 12}));
-        countDevs(19);
-        foobar(6);
-        foobar(10);
-        foobar(15);
-        calculateSumOfDiagonalElements();
-        printMatrix();
-        printPrimeNumbers();
+//        printArray();
+//        System.out.println();
+//        System.out.println(operation(1));
+//        System.out.println(operation(0));
+//        System.out.println(operation(-5));
+//        System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6, 9, 11, 12,-5}));
+//        countDevs(4);
+//        countDevs(42);
+//        foobar(6);
+//        foobar(10);
+//        foobar(15);
+//        calculateSumOfDiagonalElements();
+//        printMatrix();
+//        printPrimeNumbers();
+        for (int i = 1; i < 125; i++) {
+            countDevs(i);
+        }
     }
 
 
@@ -44,7 +48,7 @@ public class Lesson3_Homework {
     public static int calculateCountOfOddElementsInMatrix(int[] ints) {
         int count = 0;
         for (int i = 0; i < ints.length; i++) {
-            if (ints[i] % 2 == 1) {
+            if (ints[i] % 2 == 1 || ints[i] % 2 == -1) {
                 count++;
             }
         }
@@ -54,7 +58,9 @@ public class Lesson3_Homework {
     public static void countDevs(int count) {
         if (count % 10 == 1 && count % 100 != 11) {
             System.out.println(count + " программист");
-        } else if (count % 10 > 1 && count % 10 < 5 && count % 100 < 5 && count % 100 > 21) {
+        } else if (count % 100 > 4 && count % 100 < 21) {
+            System.out.println(count + " программистов");
+        } else if (count % 10 > 1 && count % 10 < 5) {
             System.out.println(count + " программиста");
         } else {
             System.out.println(count + " программистов");
