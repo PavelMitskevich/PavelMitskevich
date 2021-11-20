@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Palindromes {
-    public static void isPalindromes(String[] str) {
+    public static List<String> isPalindromes(String[] str) {
+        List<String> list = new ArrayList<>();
         for (String s : str) {
             StringBuilder stringBuilderFirstHalf = new StringBuilder();
             StringBuilder stringBuilderSecondHalf = new StringBuilder();
@@ -9,13 +13,14 @@ public class Palindromes {
                 stringBuilderSecondHalf.append(chars[k]);
             }
             if (stringBuilderFirstHalf.toString().equals(stringBuilderSecondHalf.toString())) {
-                System.out.println(s);
+                list.add(s);
             }
         }
+        return list;
     }
 
     public static void main(String[] args) {
-        isPalindromes(new String[]{"asdsa", "afva", "ivi", "abccba"});
-        isPalindromes(new String[]{"заказ", "фывй", "шалаш"});
+        System.out.println((isPalindromes(new String[]{"asdsa", "afva", "ivi", "abccba"})));
+        System.out.println((isPalindromes(new String[]{"заказ", "фывй", "шалаш"})));
     }
 }
