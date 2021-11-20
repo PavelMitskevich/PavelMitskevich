@@ -44,7 +44,7 @@ public class Lesson3_Homework {
     public static int calculateCountOfOddElementsInMatrix(int[] ints) {
         int count = 0;
         for (int i = 0; i < ints.length; i++) {
-            if (ints[i] % 2 == 1 && ints[i] % 2 == -1) {
+            if (ints[i] % 2 == 1) {
                 count++;
             }
         }
@@ -54,7 +54,7 @@ public class Lesson3_Homework {
     public static void countDevs(int count) {
         if (count % 10 == 1 && count % 100 != 11) {
             System.out.println(count + " программист");
-        } else if (count % 10 > 1 && count % 10 < 5 || count % 100 < 5 && count % 100 > 21) {
+        } else if (count % 10 > 1 && count % 10 < 5 && count % 100 < 5 && count % 100 > 21) {
             System.out.println(count + " программиста");
         } else {
             System.out.println(count + " программистов");
@@ -66,7 +66,7 @@ public class Lesson3_Homework {
             System.out.println("foo");
         } else if (number % 5 == 0 && number % 3 != 0) {
             System.out.println("bar");
-        } else if (number % 3 == 0 && number % 5 == 0) {
+        } else if (number % 15 == 0) {
             System.out.println("foobar");
         }
     }

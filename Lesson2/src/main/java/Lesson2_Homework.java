@@ -9,10 +9,11 @@ public class Lesson2_Homework {
     }
 
     public static int max(int a, int b) {
-        if (a<b){
+        if (a < b) {
             return b;
         }
         return a;
+//        return a >= b ? a : b;
     }
 
     public static double average(int[] array) {
@@ -40,6 +41,7 @@ public class Lesson2_Homework {
     public static double calculateHypotenuse(int a, int b) {
         double hypotenuse = Math.pow((Math.pow(a, 2) + Math.pow(b, 2)), 0.5);
         return hypotenuse;
+//        return Math.hypot(a,b);
     }
 
     public static void main(String[] args) {
@@ -52,3 +54,4 @@ public class Lesson2_Homework {
         System.out.println(calculateHypotenuse(3, 4));
     }
 }
+//рено эспейс 2 94г 2.2 бенз помпа зад ткб
