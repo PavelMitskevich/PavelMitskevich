@@ -14,6 +14,7 @@ public class Task5 {
                 new Person("Nikita", "Lobanov"),
                 new Person("Ivan", "Ivanov"),
                 new Person("Petr", "Petrov"),
+                new Person("Pavel", "Pavlov"),
                 new Person("Petr", "Dronov"),
                 new Person("Dmitriy", "Dmitiev"));
 

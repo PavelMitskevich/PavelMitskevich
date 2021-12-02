@@ -8,7 +8,7 @@ public class Task1 {
     }
 
     public static void printDouble() {
-        IntStream.of(15, 20, 30, 61, -1)
+        IntStream.of(15, 20, 30, 61, -1, 3)
                 .limit(7)
                 .map(x -> x * 2)
                 .forEach(System.out::println);
