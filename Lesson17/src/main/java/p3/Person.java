@@ -11,5 +11,5 @@ import lombok.ToString;
 @ToString
 public class Person {
     private String name;
-    private String female;
+    private String surname;
 }

@@ -18,19 +18,19 @@ public class Task5 {
                 new Person("Petr", "Dronov"),
                 new Person("Dmitriy", "Dmitiev"));
 
-        femaleFromD(people);
+        surnameFromD(people);
         countFemales(people);
     }
 
-    public static void femaleFromD(List<Person> people) {
+    public static void surnameFromD(List<Person> people) {
         people.stream()
-                .filter(person -> person.getFemale().startsWith("D"))
+                .filter(person -> person.getSurname().startsWith("D"))
                 .forEach(System.out::println);
     }
 
     public static void countFemales(List<Person> people) {
         Map<String, Long> personByFirstLetterOfFemale = people.stream()
-                .collect(Collectors.groupingBy(person -> person.getFemale().substring(0, 1), Collectors.counting()));
+                .collect(Collectors.groupingBy(person -> person.getSurname().substring(0, 1), Collectors.counting()));
         System.out.println(personByFirstLetterOfFemale);
     }
 }

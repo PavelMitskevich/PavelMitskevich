@@ -8,7 +8,7 @@ public class Task3 {
     }
 
     public static void upperFirstLetter() {
-        List<String> list = List.of("john", "arya", "sansa", "");
+        List<String> list = List.of("john", "arya", "sansa", "gena");
         list.stream()
                 .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
                 .forEach(System.out::println);
