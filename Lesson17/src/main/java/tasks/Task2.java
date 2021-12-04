@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 public class Task2 {
     public static void main(String[] args) {
         countEvenNumbers();
+        countEvenNumbers();
     }
 
     public static void countEvenNumbers() {
